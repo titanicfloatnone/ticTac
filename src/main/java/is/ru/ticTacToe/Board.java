@@ -1,6 +1,6 @@
 package is.ru.tictactoe;
 
-public class Board() {
+public class Board {
 
 	public static void main(String[] args) {
 		
