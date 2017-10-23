@@ -4,8 +4,8 @@ public class Square {
 
     private char symbol;
 
-    Square(char symbol) {
-        this.symbol = symbol;
+    Square() {
+        this.symbol = ' ';
     }
 
     public char getSymbol() {
