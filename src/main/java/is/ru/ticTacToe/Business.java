@@ -6,7 +6,7 @@ public class Business {
 	private boolean xmove;
 
 	public Business(){
-		square = new Square[3][3];
+		board = new Square[3][3];
 		xmove = true;
 	}
 
