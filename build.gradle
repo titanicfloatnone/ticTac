@@ -10,7 +10,7 @@
 apply plugin: 'java-library'
 apply plugin: 'application'
 
-mainClassName="is.ru.tictactoe.tempConsole"
+mainClassName="is.ru.tictactoe.FrontEnd"
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -26,7 +26,7 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:22.0'
 
-    implementation 'com.sparkjava:spark-core:2.6.0'
+    compile 'com.sparkjava:spark-core:2.6.0'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
