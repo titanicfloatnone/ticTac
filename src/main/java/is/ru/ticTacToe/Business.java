@@ -52,6 +52,10 @@ public class Business {
 				gameOver = true;
 			}
 		}
+		if(board[0].getSymbol() != ' ' && board[0].getSymbol() == board[4].getSymbol() && board[4].getSymbol() == board[8].getSymbol()) {
+
+			gameOver = true;
+		}
 		return gameOver;
 	}
 }
