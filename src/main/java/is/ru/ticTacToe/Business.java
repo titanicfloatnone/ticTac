@@ -39,7 +39,15 @@ public class Business {
 		
 	}
 	
-	public static boolean hasWinner() {
-		return false;
+	public boolean hasWinner() {
+
+		boolean gameOver = false;
+		for(int i = 0; i < 3; i++) {
+			if(board[i*3].getSymbol() != ' ' && board[i*3].getSymbol() == board[i*3 + 1].getSymbol() && board[i*3 + 1].getSymbol() == board[i*3 + 2].getSymbol()) {
+
+				gameOver = true;
+			}
+		}
+		return gameOver;
 	}
 }

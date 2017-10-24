@@ -14,6 +14,17 @@ public class BusinessTest {
    }
    
    @Test
+   public void hasWinnerThreeInARowHorizontalTest() {
+   		Business test = new Business();
+   		test.makeMove(3);
+   		test.makeMove(1);
+   		test.makeMove(4);
+   		test.makeMove(2);
+   		test.makeMove(5);
+   		assertEquals(true, test.hasWinner());
+   }
+
+   @Test
    public void makeMoveMakeOneXMoveTest()
    {
    		Business test = new Business();
