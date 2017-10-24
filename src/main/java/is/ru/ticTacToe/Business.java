@@ -17,6 +17,10 @@ public class Business {
 
 	public void makeMove(int position)
 	{
+		if(position < 0 )
+		{
+			throw new IllegalArgumentException("Illegal move!");
+		}
 		if(xmove)
 		{	
 			board[position] = 'X';
