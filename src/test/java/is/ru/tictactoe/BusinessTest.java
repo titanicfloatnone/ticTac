@@ -37,5 +37,13 @@ public class BusinessTest {
    		test.makeMove(-1);
    }
 
+   @Test
+   public void makeMoveTooHighPositionTest() throws IllegalArgumentException
+   {
+   		Business test = new Business();
+   		thrown.expect(IllegalArgumentException.class);
+   		thrown.expectMessage("Illegal move!");
+   		test.makeMove(9);
+   }
 
 }

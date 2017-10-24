@@ -17,7 +17,7 @@ public class Business {
 
 	public void makeMove(int position)
 	{
-		if(position < 0 )
+		if(position < 0 || position > 8)
 		{
 			throw new IllegalArgumentException("Illegal move!");
 		}
