@@ -2,15 +2,17 @@ package is.ru.tictactoe;
 
 public class Business {
 
-	private char[] board;
+	private Square[] board;
 	private boolean xmove;
 
 	public Business(){
-		board = new char[9];
+		board = new Square[9];
+		for(int i = 0; i < 9; i++)
+			board[i] = new Square();
 		xmove = true;
 	}
 
-	public char[] getBoard()
+	public Square[] getBoard()
 	{
 		return board;
 	}
@@ -23,12 +25,12 @@ public class Business {
 		}
 		if(xmove)
 		{	
-			board[position] = 'X';
+			board[position].setSymbol('X');
 			xmove = false;
 		}
 		else
 		{
-			board[position] = 'O';
+			board[position].setSymbol('O');
 			xmove = true;
 		}
 	}

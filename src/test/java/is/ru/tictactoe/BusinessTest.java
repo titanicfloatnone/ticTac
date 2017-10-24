@@ -12,7 +12,7 @@ public class BusinessTest {
    {
    		Business test = new Business();
  		test.makeMove(7);
- 		assertEquals('X', test.getBoard()[7]);
+ 		assertEquals('X', test.getBoard()[7].getSymbol());
    }
 
    @Test
@@ -21,8 +21,8 @@ public class BusinessTest {
    		Business test = new Business();
  		test.makeMove(7);
  		test.makeMove(6);
- 		assertEquals('X', test.getBoard()[7]);
- 		assertEquals('O', test.getBoard()[6]);
+ 		assertEquals('X', test.getBoard()[7].getSymbol());
+ 		assertEquals('O', test.getBoard()[6].getSymbol());
    }
 
    @Rule
@@ -45,5 +45,15 @@ public class BusinessTest {
    		thrown.expectMessage("Illegal move!");
    		test.makeMove(9);
    }
+
+   /*@Test
+   public void makeMovePositionTakenTest() throws IllegalArgumentException
+   {
+   		Business test = new Business();
+   		thrown.expect(IllegalArgumentException.class);
+   		thrown.expectMessage("Position taken!");
+   		test.makeMove(5);
+   		test.makeMove(5);
+   }*/
 
 }
