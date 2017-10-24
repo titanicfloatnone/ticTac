@@ -15,4 +15,8 @@ public class Square {
     public void setSymbol(char symbol) {
     	this.symbol = symbol;
     }
+
+    public boolean isFree() {
+    	return this.symbol == ' ';
+    } 
 }
