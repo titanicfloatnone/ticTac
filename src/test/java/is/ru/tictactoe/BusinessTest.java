@@ -13,4 +13,14 @@ public class BusinessTest {
  		assertEquals('X', test.getBoard()[7]);
    }
 
+    @Test
+   public void makeMoveMakeTwoMovesTest()
+   {
+   		Business test = new Business();
+ 		test.makeMove(7);
+ 		test.makeMove(6);
+ 		assertEquals('X', test.getBoard()[7]);
+ 		assertEquals('O', test.getBoard()[6]);
+   }
+
 }

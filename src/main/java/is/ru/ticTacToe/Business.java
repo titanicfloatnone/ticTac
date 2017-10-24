@@ -17,8 +17,16 @@ public class Business {
 
 	public void makeMove(int position)
 	{
+		if(xmove)
+		{	
 			board[position] = 'X';
 			xmove = false;
+		}
+		else
+		{
+			board[position] = 'O';
+			xmove = true;
+		}
 	}
 
 	public static void main(String[] args) {
