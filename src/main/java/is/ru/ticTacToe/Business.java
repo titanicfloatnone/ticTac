@@ -19,17 +19,17 @@ public class Business {
 
 	public void makeMove(int position)
 	{
-		if(position < 0 || position > 8)
-		{
+		if(position < 0 || position > 8){
 			throw new IllegalArgumentException("Illegal move!");
 		}
-		if(xmove)
-		{	
+		else if(!board[position].isFree()){
+			throw new IllegalArgumentException("Position taken!");
+		}
+		if(xmove){	
 			board[position].setSymbol('X');
 			xmove = false;
 		}
-		else
-		{
+		else{
 			board[position].setSymbol('O');
 			xmove = true;
 		}

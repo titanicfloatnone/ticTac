@@ -27,7 +27,6 @@ public class BusinessTest {
 
    @Rule
    public ExpectedException thrown = ExpectedException.none();
-
    @Test
    public void makeMoveNegativePositionTest() throws IllegalArgumentException
    {
@@ -46,14 +45,16 @@ public class BusinessTest {
    		test.makeMove(9);
    }
 
-   /*@Test
+   @Rule
+   public ExpectedException thrown2 = ExpectedException.none();
+   @Test
    public void makeMovePositionTakenTest() throws IllegalArgumentException
    {
    		Business test = new Business();
-   		thrown.expect(IllegalArgumentException.class);
-   		thrown.expectMessage("Position taken!");
-   		test.makeMove(5);
-   		test.makeMove(5);
-   }*/
+   		thrown2.expect(IllegalArgumentException.class);
+   		thrown2.expectMessage("Position taken!");
+   		test.makeMove(7);
+   		test.makeMove(7);
+   }
 
 }
