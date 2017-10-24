@@ -1,0 +1,35 @@
+body {
+  background-color: #FFFFEE;
+}
+
+#intro {
+  text-align: center;
+}
+
+#intro-text {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.game-grid{
+  margin-top: 10px;
+}
+
+.box {
+  border: 1px solid black;
+  height: 150px;
+}
+/*
+.box {
+  background-color: blue;
+  margin: 10px;
+  height: 187px;
+  display: inline-block;
+}
+
+.game-grid {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+*/
