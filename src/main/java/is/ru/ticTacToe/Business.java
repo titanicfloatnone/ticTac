@@ -38,7 +38,29 @@ public class Business {
 	public static void main(String[] args) {
 		
 	}
+	
+	public boolean hasWinner() {
+
+		boolean gameOver = false;
+		for(int i = 0; i < 3; i++) {
+			if(board[i*3].getSymbol() != ' ' && board[i*3].getSymbol() == board[i*3 + 1].getSymbol() && board[i*3 + 1].getSymbol() == board[i*3 + 2].getSymbol()) {
+
+				gameOver = true;
+			}
+			if(board[i].getSymbol() != ' ' && board[i].getSymbol() == board[i+3].getSymbol() && board[i+3].getSymbol() == board[i+6].getSymbol()) {
+
+				gameOver = true;
+			}
+		}
+		if(board[0].getSymbol() != ' ' && board[0].getSymbol() == board[4].getSymbol() && board[4].getSymbol() == board[8].getSymbol()) {
+
+			gameOver = true;
+		}
+
+		if(board[2].getSymbol() != ' ' && board[2].getSymbol() == board[4].getSymbol() && board[4].getSymbol() == board[6].getSymbol()) {
+
+			gameOver = true;
+		}
+		return gameOver;
+	}
 }
-
-
-
