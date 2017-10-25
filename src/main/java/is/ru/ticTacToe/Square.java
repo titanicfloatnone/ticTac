@@ -18,5 +18,5 @@ public class Square {
 
     public boolean isFree() {
     	return this.symbol == ' ';
-    } 
+    }
 }
