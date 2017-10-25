@@ -17,7 +17,7 @@ public class Business {
 		return board;
 	}
 
-	public void makeMove(int position)
+	public Square[] makeMove(int position)
 	{
 		if(position < 0 || position > 8){
 			throw new IllegalArgumentException("Illegal move!");
@@ -25,7 +25,7 @@ public class Business {
 		else if(!board[position].isFree()){
 			throw new IllegalArgumentException("Position taken!");
 		}
-		if(xmove){	
+		if(xmove){
 			board[position].setSymbol('X');
 			xmove = false;
 		}
@@ -33,12 +33,13 @@ public class Business {
 			board[position].setSymbol('O');
 			xmove = true;
 		}
+		return board;
 	}
 
 	public static void main(String[] args) {
-		
+
 	}
-	
+
 	public boolean hasWinner() {
 
 		boolean gameOver = false;
