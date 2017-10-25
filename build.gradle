@@ -28,6 +28,7 @@ dependencies {
 
     implementation 'com.sparkjava:spark-core:2.6.0'
     implementation 'org.slf4j:slf4j-simple:1.7.25'
+    implementation 'com.google.code.gson:gson:2.8.2'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
