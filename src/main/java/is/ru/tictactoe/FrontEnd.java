@@ -3,6 +3,8 @@ package is.ru.tictactoe;
 import static spark.Spark.*;
 import spark.QueryParamsMap;
 import com.google.gson.Gson;
+import org.json.JSONArray;
+
 
 public class FrontEnd {
   private static Business bl;
@@ -29,9 +31,10 @@ public class FrontEnd {
 
   }
 
-  public static String squareToJson(Square[] input) {
+  public static JSONArray squareToJson(Square[] input) {
+
       Gson gson = new Gson();
-      String json = gson.toJson(input);
+      JSONArray json = gson.toJson(input);
       return json;
   }
 
