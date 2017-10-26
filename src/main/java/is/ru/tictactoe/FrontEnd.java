@@ -4,7 +4,7 @@ import static spark.Spark.*;
 
 public class FrontEnd {
   public static void main(String[] args) {
-  	PORT(getHerokuPort());
+  	port(getHerokuPort());
     staticFiles.location("/public");
 
     get("/", (req, res) -> greet());
