@@ -4,21 +4,25 @@ public class Business {
 
 	private Square[] board;
 	private boolean xmove;
+	private int moves;
 
 	public Business(){
 		board = new Square[9];
 		for(int i = 0; i < 9; i++)
 			board[i] = new Square();
 		xmove = true;
+		moves = 0;
 	}
 
-	public Square[] getBoard()
-	{
+	public Square[] getBoard() {
 		return board;
 	}
 
-	public Square[] makeMove(int position)
-	{
+	public int getMoves() {
+		return moves;
+	}
+
+	public Square[] makeMove(int position) {
 		if(position < 0 || position > 8){
 			throw new IllegalArgumentException("Illegal move!");
 		}
@@ -33,6 +37,7 @@ public class Business {
 			board[position].setSymbol('O');
 			xmove = true;
 		}
+		moves++;
 		return board;
 	}
 

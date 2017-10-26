@@ -106,4 +106,14 @@ public class BusinessTest {
    		test.makeMove(7);
    		test.makeMove(7);
    }
+
+     @Test
+   public void makeMoveIncrementsMoveCounterTest() {
+      Business test = new Business();
+      test.makeMove(7);
+      test.makeMove(1);
+      test.makeMove(2);
+
+      assertEquals(3, test.getMoves());
+   }
 }
