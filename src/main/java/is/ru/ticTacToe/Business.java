@@ -7,9 +7,7 @@ public class Business {
 
 	public Business(){
 		board = new Square[9];
-		for(int i = 0; i < 9; i++)
-			board[i] = new Square();
-		xmove = true;
+		restartGame();
 	}
 
 	public Square[] getBoard()
