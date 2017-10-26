@@ -2,6 +2,7 @@ package is.ru.tictactoe;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 
@@ -12,7 +13,7 @@ public class BusinessTest {
    		Business test = new Business();
    		assertEquals(false, test.hasWinner());
    }
-   
+
    @Test
    public void hasWinnerThreeInARowHorizontalTest() {
    		Business test = new Business();
@@ -106,4 +107,25 @@ public class BusinessTest {
    		test.makeMove(7);
    		test.makeMove(7);
    }
+
+   @Test
+   public void restartGameTest() {
+      Business test = new Business();
+      test.makeMove(1);
+      assertEquals('X', test.getBoard()[1].getSymbol());
+      test.restartGame();
+      for(int i = 0; i < 9; i++)
+        assertEquals(' ', test.getBoard()[i].getSymbol());
+   }
+
+   @Test
+   public void restartAfterGameTest() {
+      Business test = new Business();
+      for(int i = 0; i < 9; i++)
+        test.makeMove(i);
+      test.restartGame();
+      for(int i = 0; i < 9; i++)
+        assertEquals(' ', test.getBoard()[i].getSymbol());
+   }
+
 }
