@@ -137,5 +137,20 @@ public class BusinessTest {
          assertEquals(true, test.isTie());
    }
 
+   @Test
+   public void isTieIsTieWhenBoardFullAndHasWinnerTest() throws IllegalArgumentException {
+         Business test = new Business();
+         test.makeMove(0);
+         test.makeMove(1);
+         test.makeMove(2);
+         test.makeMove(3);
+         test.makeMove(4);
+         test.makeMove(5);
+         test.makeMove(6);
+         test.makeMove(7);
+         test.makeMove(8);
+         assertEquals(false, test.isTie());
+   }
+
 
 }

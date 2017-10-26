@@ -42,7 +42,7 @@ public class Business {
 	}
 
 	public boolean isTie() {
-		if(moves == 9)
+		if(moves == 9 && !hasWinner())
 		{
 			return true;
 		}
