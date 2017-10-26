@@ -32,6 +32,11 @@ public class FrontEnd {
       return bl.hasWinner();
     });
 
+    get("/restartGame", (req, res) -> {
+      bl.restartGame();
+      return true;
+    });
+
   }
 
   public static String squareToJson(Square[] input) {
