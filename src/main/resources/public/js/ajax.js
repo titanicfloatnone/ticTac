@@ -7,7 +7,13 @@ $(document).ready(function(){
     $.ajax({
         url: '/makeMove?number=' +  id,
         success: function (Data) {
-            console.log(Data[0]);
+          if(Data.startsWith("Error")) {
+
+          }
+          else {
+            var object = JSON.parse(Data);
+            $("#" + id).html(object[id].symbol);
+          }
         }
     });
   });

@@ -5,8 +5,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 import com.google.gson.Gson;
-import org.json.JSONArray;
-
 
 public class FrontEndTest {
 
@@ -23,8 +21,7 @@ public class FrontEndTest {
     board[1] = input;
 
     Gson gson = new Gson();
-    JSONArray converted = gson.toJson(board);
-    System.out.print(converted);
+    String converted = gson.toJson(board);
     assertEquals(converted, FrontEnd.squareToJson(test.makeMove(1)));
   }
 
