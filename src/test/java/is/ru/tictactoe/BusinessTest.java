@@ -117,4 +117,15 @@ public class BusinessTest {
       for(int i = 0; i < 9; i++)
         assertEquals(' ', test.getBoard()[i].getSymbol());
    }
+
+   @Test
+   public void restartAfterGameTest() {
+      Business test = new Business();
+      for(int i = 0; i < 9; i++)
+        test.makeMove(i);
+      test.restartGame();
+      for(int i = 0; i < 9; i++)
+        assertEquals(' ', test.getBoard()[i].getSymbol());
+   }
+
 }
