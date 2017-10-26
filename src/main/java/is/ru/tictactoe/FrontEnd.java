@@ -21,11 +21,15 @@ public class FrontEnd {
 
         try {
             Integer number = map.get("number").integerValue();
+
             return squareToJson(bl.makeMove(number));
         }
         catch (Exception e){
             return "Error: " + e.getMessage();
         }
+    });
+    get("/hasWinner", (req, res) -> {
+      return bl.hasWinner();
     });
 
   }
