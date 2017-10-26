@@ -40,9 +40,13 @@ public class Business {
 		moves++;
 		return board;
 	}
-	
+
 	public boolean isTie() {
-			return false;
+		if(moves == 9)
+		{
+			return true;
+		}
+		return false;
 	}
 
 
