@@ -6,7 +6,7 @@ public class Business {
 	private boolean xmove;
 	private int moves;
 
-	public Business(){
+	public Business() {
 		board = new Square[9];
 		for(int i = 0; i < 9; i++)
 			board[i] = new Square();
@@ -23,23 +23,28 @@ public class Business {
 	}
 
 	public Square[] makeMove(int position) {
-		if(position < 0 || position > 8){
+		if(position < 0 || position > 8) {
 			throw new IllegalArgumentException("Illegal move!");
 		}
-		else if(!board[position].isFree()){
+		else if(!board[position].isFree()) {
 			throw new IllegalArgumentException("Position taken!");
 		}
-		if(xmove){
+		if(xmove) { 
 			board[position].setSymbol('X');
 			xmove = false;
 		}
-		else{
+		else {
 			board[position].setSymbol('O');
 			xmove = true;
 		}
 		moves++;
 		return board;
 	}
+	
+	public boolean isTie() {
+			return false;
+	}
+
 
 	public static void main(String[] args) {
 
