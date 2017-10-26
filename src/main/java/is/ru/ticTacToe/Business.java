@@ -36,8 +36,10 @@ public class Business {
 		return board;
 	}
 
-	public static void main(String[] args) {
-
+	public void restartGame() {
+		for(int i = 0; i < 9; i++)
+			board[i] = new Square();
+		xmove = true;
 	}
 
 	public boolean hasWinner() {
