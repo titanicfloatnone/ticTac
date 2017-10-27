@@ -7,4 +7,4 @@ deploy:
   on:
     repo: titanicfloatnone/ticTac
 after_success:
-  bash <(curl -s https://codecov.io/bash)
+  bash <(curl -s https://codecov.io/bash) -t de30141e-586c-46cc-8fd5-f29a43712070
