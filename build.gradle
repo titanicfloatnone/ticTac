@@ -9,6 +9,19 @@
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
 apply plugin: 'application'
+apply plugin: 'jacoco'
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.0'
+    }
+}
+apply plugin: 'com.github.kt3k.coveralls'
+
+
 
 mainClassName="is.ru.tictactoe.FrontEnd"
 
@@ -36,4 +49,11 @@ dependencies {
 
 task stage {
   dependsOn installDist
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
 }
