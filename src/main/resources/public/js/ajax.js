@@ -12,50 +12,56 @@ window.onload = function()
       }
   });
 
-}
+};
 $(document).ready(function(){
+  hasWinner = false;
+  if(!hasWinner) {
+    $('.box').click(function(){
 
-  $('.box').click(function(){
+      var id = $(this).attr('id');
+      var winner = "the winner is ";
 
-    var id = $(this).attr('id');
-    var object = null;
-    var winner = "the winner is ";
+      $.ajax({
+          url: '/makeMove?number=' +  id,
+          success: function (Data) {
+            if(Data.startsWith("Error")) {
 
-    $.ajax({
-        url: '/makeMove?number=' +  id,
-        success: function (Data) {
-          if(Data.startsWith("Error")) {
+            }
+            else {
+              $.ajax({
+                url: '/hasWinner',
+                success: function (Data) {
 
-          }
-          else {
-            object = JSON.parse(Data);
-            $("#" + id).html(object[id].symbol);
-
-            $.ajax({
-              url: '/hasWinner',
-              success: function (Data) {
-
-                  if(Data == "true")
-                  {
-                    $("#winner-is").html(winner + object[id].symbol);
-                  }
+                    if(Data == "true")
+                    {
+                      if(!hasWinner) {
+                        $("#winner-is").html(winner + object[id].symbol);
+                      }
+                      hasWinner = true;
+                    }
+                }
+              });
+              if(!hasWinner) {
+                object = JSON.parse(Data);
+                $("#" + id).html(object[id].symbol);
               }
-            });
 
-            $.ajax({
-              url: '/isTie',
-              success: function (Data) {
-                  if(Data == "true")
-                  {
-                    $("#tie").html("Its a tie!");
-                  }
-              }
-            });
+
+
+              $.ajax({
+                url: '/isTie',
+                success: function (Data) {
+                    if(Data == "true")
+                    {
+                      $("#tie").html("Its a tie!");
+                    }
+                }
+              });
+            }
           }
-        }
+
+      });
 
     });
-
-  });
-
+  }
 });
