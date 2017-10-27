@@ -26,6 +26,9 @@ public class Business {
 		else if(!board[position].isFree()) {
 			throw new IllegalArgumentException("Position taken!");
 		}
+		if(hasWinner()) {
+			return board;
+		}
 		if(xmove) {
 			board[position].setSymbol('X');
 			xmove = false;
