@@ -8,10 +8,7 @@ public class Business {
 
 	public Business() {
 		board = new Square[9];
-		for(int i = 0; i < 9; i++)
-			board[i] = new Square();
-		xmove = true;
-		moves = 0;
+		restartGame();
 	}
 
 	public Square[] getBoard() {
@@ -29,7 +26,7 @@ public class Business {
 		else if(!board[position].isFree()) {
 			throw new IllegalArgumentException("Position taken!");
 		}
-		if(xmove) { 
+		if(xmove) {
 			board[position].setSymbol('X');
 			xmove = false;
 		}
@@ -41,17 +38,19 @@ public class Business {
 		return board;
 	}
 
+	public void restartGame() {
+		moves = 0;
+		for(int i = 0; i < 9; i++)
+			board[i] = new Square();
+		xmove = true;
+	}
+
 	public boolean isTie() {
 		if(moves == 9 && !hasWinner())
 		{
 			return true;
 		}
 		return false;
-	}
-
-
-	public static void main(String[] args) {
-
 	}
 
 	public boolean hasWinner() {
