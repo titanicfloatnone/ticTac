@@ -24,8 +24,4 @@ public class FrontEndTest {
     String converted = gson.toJson(board);
     assertEquals(converted, FrontEnd.squareToJson(test.makeMove(1)));
   }
-
-
-
-
 }
