@@ -1,7 +1,8 @@
 [![Build Status](https://travis-ci.org/titanicfloatnone/ticTac.svg?branch=master)](https://travis-ci.org/titanicfloatnone/ticTac)
+[![Coverage Status](https://coveralls.io/repos/github/titanicfloatnone/ticTac/badge.svg?branch=master)](https://coveralls.io/github/titanicfloatnone/ticTac?branch=master)
 
-This project is a part of a software engineering course in [RU(Reykjavík University)](https://www.ru.is/). The job is to implement the game TicTacToe. 
-The prime **goal** however is to follow the best practices in software development, and to to do so there are few higly important things to note: 
+This project is a part of a software engineering course in [RU(Reykjavík University)](https://www.ru.is/). The job is to implement the game TicTacToe.
+The prime **goal** however is to follow the best practices in software development, and to to do so there are few higly important things to note:
 
 
 * The code is stored in source control system on GitHub
@@ -15,8 +16,8 @@ design practices.
 * Use feature branches and pull request for all features
 
 
-Here are the group members enlisted: 
-* Alex Már Gunnarsson	
+Here are the group members enlisted:
+* Alex Már Gunnarsson
 * Guðberg Sumarliðason
 * Þorsteinn Sæmundsson
 * Hafsteinn Atli Stefánsson
