@@ -35,18 +35,23 @@ $(document).ready(function(){
             $.ajax({
               url: '/hasWinner',
               success: function (Data) {
-                  console.log("Im in hasWinner!");
-                  console.log(Data);
 
-                  console.log(object);
                   if(Data == "true")
                   {
-                    console.log("winner!");
                     $("#winner-is").html(winner + object[id].symbol);
                   }
               }
-            })
+            });
 
+            $.ajax({
+              url: '/isTie',
+              success: function (Data) {
+                  if(Data == "true")
+                  {
+                    $("#tie").html("Its a tie!");
+                  }
+              }
+            });
           }
         }
 
