@@ -15,7 +15,7 @@ window.onload = function()
 };
 $(document).ready(function(){
   hasWinner = false;
-    $('.box').click(function(){
+    $('div#game-grid').on('click', '.box', function (){
       if(!hasWinner) {
         var id = $(this).attr('id');
         var winner = "the winner is ";
@@ -42,7 +42,16 @@ $(document).ready(function(){
                 });
                 if(!hasWinner) {
                   object = JSON.parse(Data);
-                  $("#" + id).html(object[id].symbol);
+                  var html = "<div class=\"row\">";
+                  for(i = 0; i < 9; i++) {
+                    if(i % 3 === 0 && i > 0) {
+                      html += "</div>";
+                      html += "<div class=\"row\">";
+                    }
+                    html += "<div class=\"col-md-4 box\" id=\""+ i +"\">";
+                    html += object[i].symbol +"</div>";
+                  }
+                  $("div#game-grid").html(html);
                 }
 
 
