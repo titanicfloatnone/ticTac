@@ -30,7 +30,6 @@ $(document).ready(function(){
           else {
             object = JSON.parse(Data);
             $("#" + id).html(object[id].symbol);
-            console.log(Data);
 
             $.ajax({
               url: '/hasWinner',
