@@ -198,4 +198,11 @@ public class BusinessTest {
          test.makeMove(7);
          assertEquals(true, test.isTie());
    }
+
+   @Test
+   public void getMovesTest() {
+      Business test = new Business();
+      test.makeMove(1);
+      assertEquals(1, test.getMoves());
+   }
 }

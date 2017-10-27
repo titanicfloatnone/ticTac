@@ -25,8 +25,4 @@ public class FrontEndTest {
     test.makeMove(1);
     assertEquals(converted, FrontEnd.squareToJson(test.getBoard()));
   }
-
-
-
-
 }
