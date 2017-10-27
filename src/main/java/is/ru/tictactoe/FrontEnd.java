@@ -34,6 +34,10 @@ public class FrontEnd {
       return bl.hasWinner();
     });
 
+    get("/isTie", (req, res) -> {
+      return bl.isTie();
+    });
+
     get("/restartGame", (req, res) -> {
       bl.restartGame();
       return true;
