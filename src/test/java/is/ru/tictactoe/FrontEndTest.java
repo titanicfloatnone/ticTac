@@ -22,10 +22,7 @@ public class FrontEndTest {
 
     Gson gson = new Gson();
     String converted = gson.toJson(board);
-    assertEquals(converted, FrontEnd.squareToJson(test.makeMove(1)));
+    test.makeMove(1);
+    assertEquals(converted, FrontEnd.squareToJson(test.getBoard()));
   }
-
-
-
-
 }

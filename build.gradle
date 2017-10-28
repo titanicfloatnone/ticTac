@@ -9,6 +9,9 @@
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
 apply plugin: 'application'
+apply plugin: 'jacoco'
+
+
 
 mainClassName="is.ru.tictactoe.FrontEnd"
 
@@ -32,8 +35,31 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+
 }
+
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'http://dl.bintray.com/content/aalmiray/kordamp' }
+    }
+    dependencies {
+        classpath 'org.kordamp:markdown-gradle-plugin:1.0.0'
+    }
+}
+apply plugin: 'org.kordamp.markdown.convert'
+
+markdownToHtml.sourceDir = project.file('docs')
+
+build.dependsOn markdownToHtml
 
 task stage {
   dependsOn installDist
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
 }
