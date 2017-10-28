@@ -37,7 +37,7 @@ $(document).ready(function(){
 
                   if(Data == "true")
                   {
-                    $("#winner-is").html(winner + object[id].symbol);
+                    $("#winner-is").html(winner + object[id].symbol + "!");
                   }
               }
             });
