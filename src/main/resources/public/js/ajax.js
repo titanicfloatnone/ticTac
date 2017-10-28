@@ -1,5 +1,4 @@
-window.onload = function()
-{
+window.onload = function() {
   $.ajax({
       url: '/restartGame',
       success: function (Data) {
@@ -11,8 +10,8 @@ window.onload = function()
         }
       }
   });
-
 };
+
 $(document).ready(function(){
   hasWinner = false;
     $('div#game-grid').on('click', '.box', function (){

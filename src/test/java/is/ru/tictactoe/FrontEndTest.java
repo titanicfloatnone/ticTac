@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 public class FrontEndTest {
 
   @Test
-  public void toJsonTest() {
+  public void squareToJsonOriginalTest() {
     Business test = new Business();
 
     Square [] board  = new Square[9];
