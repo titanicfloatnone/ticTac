@@ -4,40 +4,55 @@ public class Business {
 
 	private Square[] board;
 	private boolean xmove;
+	private int moves;
 
-	public Business(){
+	public Business() {
 		board = new Square[9];
+		restartGame();
+	}
+
+	public Square[] getBoard() {
+		return board;
+	}
+
+	public int getMoves() {
+		return moves;
+	}
+
+	public void makeMove(int position) {
+		if(position < 0 || position > 8) {
+			throw new IllegalArgumentException("Illegal move!");
+		}
+		else if(!board[position].isFree()) {
+			throw new IllegalArgumentException("Position taken!");
+		}
+		if(hasWinner()) {
+			return;
+		}
+		if(xmove) {
+			board[position].setSymbol('X');
+			xmove = false;
+		}
+		else {
+			board[position].setSymbol('O');
+			xmove = true;
+		}
+		moves++;
+	}
+
+	public void restartGame() {
+		moves = 0;
 		for(int i = 0; i < 9; i++)
 			board[i] = new Square();
 		xmove = true;
 	}
 
-	public Square[] getBoard()
-	{
-		return board;
-	}
-
-	public Square[] makeMove(int position)
-	{
-		if(position < 0 || position > 8){
-			throw new IllegalArgumentException("Illegal move!");
+	public boolean isTie() {
+		if(moves == 9 && !hasWinner())
+		{
+			return true;
 		}
-		else if(!board[position].isFree()){
-			throw new IllegalArgumentException("Position taken!");
-		}
-		if(xmove){
-			board[position].setSymbol('X');
-			xmove = false;
-		}
-		else{
-			board[position].setSymbol('O');
-			xmove = true;
-		}
-		return board;
-	}
-
-	public static void main(String[] args) {
-
+		return false;
 	}
 
 	public boolean hasWinner() {

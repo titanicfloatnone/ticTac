@@ -2,6 +2,7 @@ package is.ru.tictactoe;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 
@@ -12,7 +13,7 @@ public class BusinessTest {
    		Business test = new Business();
    		assertEquals(false, test.hasWinner());
    }
-   
+
    @Test
    public void hasWinnerThreeInARowHorizontalTest() {
    		Business test = new Business();
@@ -105,5 +106,103 @@ public class BusinessTest {
    		thrown2.expectMessage("Position taken!");
    		test.makeMove(7);
    		test.makeMove(7);
+   }
+
+   @Test
+   public void makeMoveAfterWinTest() {
+      Business test = new Business();
+      for(int i = 0; i < 8; i++) {
+        test.makeMove(i);
+      }
+      assertEquals(' ', test.getBoard()[7].getSymbol());
+   }
+
+   @Test
+   public void restartGameTest() {
+      Business test = new Business();
+      test.makeMove(1);
+      assertEquals('X', test.getBoard()[1].getSymbol());
+      test.restartGame();
+      for(int i = 0; i < 9; i++)
+        assertEquals(' ', test.getBoard()[i].getSymbol());
+   }
+
+   @Test
+   public void restartAfterGameTest() {
+      Business test = new Business();
+      for(int i = 0; i < 9; i++)
+        test.makeMove(i);
+      test.restartGame();
+      for(int i = 0; i < 9; i++)
+        assertEquals(' ', test.getBoard()[i].getSymbol());
+   }
+
+
+
+   public void makeMoveIncrementsMoveCounterTest() {
+      Business test = new Business();
+      test.makeMove(7);
+      test.makeMove(1);
+      test.makeMove(2);
+      assertEquals(3, test.getMoves());
+   }
+
+   @Test
+   public void isTieIsTieAtStartTest() throws IllegalArgumentException {
+         Business test = new Business();
+         assertEquals(false, test.isTie());
+   }
+
+   @Test
+   public void isTieIsTieWhenBoardFullTest() throws IllegalArgumentException {
+         Business test = new Business();
+         test.makeMove(0);
+         test.makeMove(1);
+         test.makeMove(2);
+         test.makeMove(3);
+         test.makeMove(4);
+         test.makeMove(6);
+         test.makeMove(5);
+         test.makeMove(8);
+         test.makeMove(7);
+         assertEquals(true, test.isTie());
+   }
+
+   @Test
+   public void isTieIsTieWhenBoardFullAndHasWinnerTest() throws IllegalArgumentException {
+         Business test = new Business();
+         test.makeMove(0);
+         test.makeMove(1);
+         test.makeMove(2);
+         test.makeMove(3);
+         test.makeMove(4);
+         test.makeMove(5);
+         test.makeMove(6);
+         test.makeMove(7);
+         test.makeMove(8);
+         assertEquals(false, test.isTie());
+   }
+
+
+   @Test
+   public void isTieIsTieWhenBoardFullAndNoWinnerTest() throws IllegalArgumentException {
+         Business test = new Business();
+         test.makeMove(0);
+         test.makeMove(1);
+         test.makeMove(2);
+         test.makeMove(3);
+         test.makeMove(4);
+         test.makeMove(6);
+         test.makeMove(5);
+         test.makeMove(8);
+         test.makeMove(7);
+         assertEquals(true, test.isTie());
+   }
+
+   @Test
+   public void getMovesTest() {
+      Business test = new Business();
+      test.makeMove(1);
+      assertEquals(1, test.getMoves());
    }
 }

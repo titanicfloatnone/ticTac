@@ -11,7 +11,7 @@ body {
   padding-bottom: 20px;
 }
 
-.game-grid{
+#game-grid{
   margin-top: 10px;
 }
 
@@ -19,17 +19,30 @@ body {
   border: 1px solid black;
   height: 150px;
 }
-/*
-.box {
-  background-color: blue;
-  margin: 10px;
-  height: 187px;
-  display: inline-block;
+.restart {
+  text-align: center;
+  padding-top: 30px;
 }
-
-.game-grid {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
+/* kudos to http://www.bestcssbuttongenerator.com/ for the restart button */
+.myButton {
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
 }
-*/
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

@@ -9,6 +9,9 @@
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
 apply plugin: 'application'
+apply plugin: 'jacoco'
+
+
 
 mainClassName="is.ru.tictactoe.FrontEnd"
 
@@ -54,6 +57,9 @@ task stage {
   dependsOn installDist
 }
 
-
-
-  
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
