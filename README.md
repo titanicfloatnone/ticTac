@@ -15,7 +15,7 @@ design practices
 * Use Automated Continuous Integration Server (e.g.Travis CI)
 * Use feature branches and pull request for all features
 
-[Here](https://www.dropbox.com/home/Apps/Docs_late_term_assignment) is our complete documentation and code coverage history stored on Dropbox.
+[Here](https://www.dropbox.com/sh/xwzi7bpgs7nhmaq/AADrmGoYLjbNgMiQn5dXhaZ7a?dl=0) is our complete documentation and code coverage history stored on Dropbox.
 
 ## Group members
 * Alex Már Gunnarsson
