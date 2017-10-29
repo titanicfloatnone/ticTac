@@ -46,6 +46,7 @@ dependencies {
 
     seleniumCompile 'junit:junit:4.12'
     seleniumCompile 'org.seleniumhq.selenium:selenium-java:3.6.0'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '2.23.0'
 }
 
 test.useTestNG()
