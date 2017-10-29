@@ -33,7 +33,8 @@ At this stage you can simply write "Gradle build" in your shell while inside the
 Create a new branch on git and work on your code and commit from there. Everytime you write "gradle build" all the unit tests for the project are run and the project is built locally. You can access the application on "localhost:4567" in any browser.
 
 ###Pull request
-When it is time to merge your new branch with the master create a pull request on GitHub. This causes Travis to build the project on a fresh machine and generates feedback after success or failure. Selenium integration end to end tests are also run at this point. If Travis ran the project succesfully your fellow programmer can safely review and accept your pull request.
+When it is time to merge your new branch with the master create a pull request on GitHub. This causes Travis to build the project on a fresh machine and generates feedback after success or failure. Selenium 
+end to end tests are run on Heroku by executing "gradle selenium", this however may take up to 2 minutes. If Travis ran the project succesfully your fellow programmer can safely review and accept your pull request.
 
 ###Updating the application
 After a pull request has merged with the master branch the updated application is deployed on the Heroku [server](http://mighty-brushlands-46890.herokuapp.com) automatically.
