@@ -8,12 +8,10 @@ import com.google.gson.Gson;
 public class FrontEnd {
   private static Business bl;
 
-  public FrontEnd(){
-    bl = new Business();
-  }
 
 
   public static void main(String[] args) {
+    DropBox dropbox = new DropBox();
     bl = new Business();
     port(getHerokuPort());
     staticFiles.location("/public");
@@ -42,7 +40,6 @@ public class FrontEnd {
       bl.restartGame();
       return true;
     });
-
   }
 
   public static String squareToJson(Square[] input) {
