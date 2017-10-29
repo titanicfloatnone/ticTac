@@ -109,6 +109,15 @@ public class BusinessTest {
    }
 
    @Test
+   public void makeMoveAfterWinTest() {
+      Business test = new Business();
+      for(int i = 0; i < 8; i++) {
+        test.makeMove(i);
+      }
+      assertEquals(' ', test.getBoard()[7].getSymbol());
+   }
+
+   @Test
    public void restartGameTest() {
       Business test = new Business();
       test.makeMove(1);
@@ -188,5 +197,12 @@ public class BusinessTest {
          test.makeMove(8);
          test.makeMove(7);
          assertEquals(true, test.isTie());
+   }
+
+   @Test
+   public void getMovesTest() {
+      Business test = new Business();
+      test.makeMove(1);
+      assertEquals(1, test.getMoves());
    }
 }

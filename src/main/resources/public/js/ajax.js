@@ -1,5 +1,4 @@
-window.onload = function()
-{
+window.onload = function() {
   $.ajax({
       url: '/restartGame',
       success: function (Data) {
@@ -11,8 +10,8 @@ window.onload = function()
         }
       }
   });
-
 };
+
 $(document).ready(function(){
   hasWinner = false;
     $('div#game-grid').on('click', '.box', function (){
@@ -34,7 +33,7 @@ $(document).ready(function(){
                       if(Data == "true")
                       {
                         if(!hasWinner) {
-                          $("#winner-is").html(winner + object[id].symbol);
+                          $("#winner-is").html(winner + object[id].symbol + "!");
                         }
                         hasWinner = true;
                       }
@@ -53,8 +52,6 @@ $(document).ready(function(){
                   }
                   $("div#game-grid").html(html);
                 }
-
-
 
                 $.ajax({
                   url: '/isTie',

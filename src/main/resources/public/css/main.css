@@ -23,6 +23,16 @@ body {
   text-align: center;
   padding-top: 30px;
 }
+/* Here is the win/tie text style */
+.winner {
+  padding-top: 100px;
+}
+
+.winner p {
+  text-align: center;
+  font-family: Arial;
+  font-size: 40px;
+}
 /* kudos to http://www.bestcssbuttongenerator.com/ for the restart button */
 .myButton {
 	background-color:#44c767;
