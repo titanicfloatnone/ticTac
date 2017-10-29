@@ -34,7 +34,7 @@ $(document).ready(function(){
                       if(Data == "true")
                       {
                         if(!hasWinner) {
-                          $("#winner-is").html(winner + object[id].symbol);
+                          $("#winner-is").html(winner + object[id].symbol + "!");
                         }
                         hasWinner = true;
                       }
@@ -53,8 +53,6 @@ $(document).ready(function(){
                   }
                   $("div#game-grid").html(html);
                 }
-
-
 
                 $.ajax({
                   url: '/isTie',
