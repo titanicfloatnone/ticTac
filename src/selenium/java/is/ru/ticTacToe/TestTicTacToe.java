@@ -19,7 +19,6 @@ public class TestTicTacToe extends SeleniumTestWrapper {
   	public void testXwinner() throws Exception {
 	  	driver.get(baseUrl);
 	  	Thread.sleep(2000);
-	  	//WebElement restart = driver.findElement(By.id(""));
 	  	WebElement input = driver.findElement(By.id("0"));
 	  	input.click();
 	  	Thread.sleep(2000);
