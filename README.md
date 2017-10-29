@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/titanicfloatnone/ticTac.svg?branch=master)](https://travis-ci.org/titanicfloatnone/ticTac)
-[![codecov](https://codecov.io/gh/titanicfloatnone/ticTac/branch/master/graph/badge.svg)](https://codecov.io/gh/titanicfloatnone/ticTac)
+[![Coverage Status](https://coveralls.io/repos/github/titanicfloatnone/ticTac/badge.svg?branch=safeMerging)](https://coveralls.io/github/titanicfloatnone/ticTac?branch=safeMerging)
 
 This project is a part of a software engineering course in [RU(Reykjavík University)](https://www.ru.is/). The job is to implement the game TicTacToe.
 The prime **goal** however is to follow the best practices in software development, and to to do so there are few higly important things to note:
