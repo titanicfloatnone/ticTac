@@ -6,7 +6,5 @@ deploy:
   app: mighty-brushlands-46890
   on:
     repo: titanicfloatnone/ticTac
-before_install: 'pip install --user codecov'
 after_success:
-  codecov
-  bash <(curl -s https://codecov.io/bash)
+  bash <(curl -s https://codecov.io/bash) -t de30141e-586c-46cc-8fd5-f29a43712070
