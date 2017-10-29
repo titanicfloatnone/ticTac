@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/titanicfloatnone/ticTac.svg?branch=master)](https://travis-ci.org/titanicfloatnone/ticTac)
+[![Coverage Status](https://coveralls.io/repos/github/titanicfloatnone/ticTac/badge.svg?branch=safeMerging)](https://coveralls.io/github/titanicfloatnone/ticTac?branch=safeMerging)
+
 
 ## About the project
 This project is a part of a software engineering course in [RU(Reykjavík University)](https://www.ru.is/). The job is to implement the game TicTacToe.

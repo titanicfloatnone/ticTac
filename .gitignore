@@ -36,6 +36,7 @@ hs_err_pid*
 ### Gradle ###
 .gradle
 **/build/
+!build/reports/jacoco/test/jacocoTestReport.xml
 
 # Ignore Gradle GUI config
 gradle-app.setting
