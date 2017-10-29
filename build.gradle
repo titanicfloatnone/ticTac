@@ -11,8 +11,16 @@ apply plugin: 'java-library'
 apply plugin: 'application'
 apply plugin: 'jacoco'
 
+buildscript {
+    repositories {
+        jcenter()
+    }
 
-
+    dependencies {
+        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.0'
+    }
+}
+apply plugin: 'com.github.kt3k.coveralls'
 mainClassName="is.ru.tictactoe.FrontEnd"
 
 // In this section you declare where to find the dependencies of your project
@@ -46,6 +54,7 @@ dependencies {
 
     seleniumCompile 'junit:junit:4.12'
     seleniumCompile 'org.seleniumhq.selenium:selenium-java:3.6.0'
+
 }
 
 test.useTestNG()
