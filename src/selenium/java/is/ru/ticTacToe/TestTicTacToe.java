@@ -67,5 +67,40 @@ public class TestTicTacToe extends SeleniumTestWrapper {
 	  	assertEquals("the winner is O!",status.getText());
   	}
 
+  	@Test
+  	public void testTie() throws Exception {
+  		driver.get(baseUrl);
+  		Thread.sleep(2000);
+  		WebElement input = driver.findElement(By.id("0"));
+	  	input.click();
+	  	Thread.sleep(2000);
+	  	input = driver.findElement(By.id("1"));
+	  	input.click();
+	  	Thread.sleep(2000);
+	  	input = driver.findElement(By.id("2"));
+	  	input.click();
+	  	Thread.sleep(2000);
+	  	input = driver.findElement(By.id("3"));
+	  	input.click();
+	  	Thread.sleep(2000);
+	  	input = driver.findElement(By.id("5"));
+	  	input.click();
+	  	Thread.sleep(2000);
+	  	input = driver.findElement(By.id("4"));
+	  	input.click();
+	  	Thread.sleep(2000);
+	  	input = driver.findElement(By.id("6"));
+	  	input.click();
+	  	Thread.sleep(2000);
+	  	input = driver.findElement(By.id("8"));
+	  	input.click();
+	  	Thread.sleep(2000);
+	  	input = driver.findElement(By.id("7"));
+	  	input.click();
+	  	Thread.sleep(2000);
+	  	WebElement status = driver.findElement(By.id("tie"));
+	  	Thread.sleep(3000);
+	  	assertEquals("Its a tie!",status.getText());
+  	}
 
 }
