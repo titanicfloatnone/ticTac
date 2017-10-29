@@ -5,6 +5,7 @@ Included in this report is the design framework for our implementation of the ga
 
 ## Classes
 Class Diagram
+
 ![Imgur](https://i.imgur.com/XOWkcyL.png)
 
 ## Programming languages
@@ -14,17 +15,26 @@ Java was used to code all the business logic and entity classes as well as part 
 
 ### Java
 Below are listed the various coding rules when writing our Java code
+
 * All classes have Pascal casing
+
 * All functions, function parameters and member variables have camel Casing
+
 * Stroustrup style is used for curly braces
+
 * The code follows good Object orientation
+
 * The business logic is written with test-driven development
+
 * Member variables are private
+
 * Test functions are named "function name" + "name of test" + "Test"
 
 ### CSS
 Below is a short list of the coding rules we associated with all CSS code
+
 * All variable names are written with lowercase letters and with a dash in between words.
+
 * Stroustrup style is used for curly braces
 
 
