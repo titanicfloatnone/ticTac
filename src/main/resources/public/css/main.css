@@ -24,6 +24,16 @@ body {
   padding-top: 30px;
 }
 /* kudos to http://www.bestcssbuttongenerator.com/ for the restart button */
+.winner {
+  padding-top: 100px;
+}
+
+.winner p {
+  text-align: center;
+  font-family:Arial;
+	font-size:40px;
+}
+
 .myButton {
 	background-color:#44c767;
 	-moz-border-radius:28px;
