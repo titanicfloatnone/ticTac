@@ -17,7 +17,7 @@ design practices
 * Use Automated Continuous Integration Server (e.g.Travis CI)
 * Use feature branches and pull request for all features
 
-[Here](https://www.dropbox.com/sh/xwzi7bpgs7nhmaq/AADrmGoYLjbNgMiQn5dXhaZ7a?dl=0) is our complete documentation and code coverage history stored on Dropbox.
+[Here](https://www.dropbox.com/sh/xwzi7bpgs7nhmaq/AADrmGoYLjbNgMiQn5dXhaZ7a?dl=0) is our complete documentation history stored on Dropbox. The code coverage was implemented with [coveralls](https://coveralls.io/github/titanicfloatnone/ticTac). The group put two badges, one which represents whether the latest build status is successful and the other represents the code coverage.
 
 ## Group members
 * Alex Már Gunnarsson
