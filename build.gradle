@@ -33,6 +33,8 @@ dependencies {
     implementation 'org.slf4j:slf4j-simple:1.7.25'
     implementation 'com.google.code.gson:gson:2.8.2'
 
+    implementation 'com.dropbox.core:dropbox-core-sdk:3.0.5'
+
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 
@@ -52,6 +54,7 @@ apply plugin: 'org.kordamp.markdown.convert'
 markdownToHtml.sourceDir = project.file('docs')
 
 build.dependsOn markdownToHtml
+run.dependsOn build
 
 task stage {
   dependsOn installDist
@@ -63,3 +66,5 @@ jacocoTestReport {
         html.enabled true
     }
 }
+
+build.finalizedBy(jacocoTestReport)
