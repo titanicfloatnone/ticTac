@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.Keys;
 
 public class TestTicTacToe extends SeleniumTestWrapper {
-	
+
 	@Test
   	public void testTitleMatches() {
 		driver.get(baseUrl);
@@ -38,6 +38,7 @@ public class TestTicTacToe extends SeleniumTestWrapper {
 	  	WebElement status = driver.findElement(By.id("winner-is"));
 	  	Thread.sleep(3000);
 	  	assertEquals("the winner is X!",status.getText());
+			Thread.sleep(2000);
   	}
 
 	@Test
@@ -65,6 +66,7 @@ public class TestTicTacToe extends SeleniumTestWrapper {
 	  	WebElement status = driver.findElement(By.id("winner-is"));
 	  	Thread.sleep(3000);
 	  	assertEquals("the winner is O!",status.getText());
+			Thread.sleep(2000);
   	}
 
   	@Test
@@ -101,6 +103,7 @@ public class TestTicTacToe extends SeleniumTestWrapper {
 	  	WebElement status = driver.findElement(By.id("tie"));
 	  	Thread.sleep(3000);
 	  	assertEquals("Its a tie!",status.getText());
+			Thread.sleep(2000);
   	}
 
 }
