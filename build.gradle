@@ -10,16 +10,6 @@
 apply plugin: 'java-library'
 apply plugin: 'application'
 apply plugin: 'jacoco'
-buildscript {
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.0.0'
-    }
-}
-apply plugin: 'com.github.kt3k.coveralls'
 
 
 
@@ -30,6 +20,10 @@ repositories {
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+}
+
+sourceSets {
+  selenium
 }
 
 dependencies {
@@ -43,9 +37,39 @@ dependencies {
     implementation 'org.slf4j:slf4j-simple:1.7.25'
     implementation 'com.google.code.gson:gson:2.8.2'
 
+    implementation 'com.dropbox.core:dropbox-core-sdk:3.0.5'
+
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+
+    testCompile 'org.testng:testng:6.10'
+
+    seleniumCompile 'junit:junit:4.12'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-java:3.6.0'
 }
+
+test.useTestNG()
+
+task selenium(type: Test, dependsOn: installDist) {
+  testClassesDir = sourceSets.selenium.output.classesDir
+  classpath = sourceSets.selenium.runtimeClasspath
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        maven { url 'http://dl.bintray.com/content/aalmiray/kordamp' }
+    }
+    dependencies {
+        classpath 'org.kordamp:markdown-gradle-plugin:1.0.0'
+    }
+}
+apply plugin: 'org.kordamp.markdown.convert'
+
+markdownToHtml.sourceDir = project.file('docs')
+
+build.dependsOn markdownToHtml
+run.dependsOn build
 
 task stage {
   dependsOn installDist
@@ -53,7 +77,9 @@ task stage {
 
 jacocoTestReport {
     reports {
-        xml.enabled true
-        html.enabled false
+        xml.enabled false
+        html.enabled true
     }
 }
+
+build.finalizedBy(jacocoTestReport, selenium)

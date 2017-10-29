@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 public class FrontEndTest {
 
   @Test
-  public void toJsonTest() {
+  public void squareToJsonOriginalTest() {
     Business test = new Business();
 
     Square [] board  = new Square[9];
@@ -22,10 +22,7 @@ public class FrontEndTest {
 
     Gson gson = new Gson();
     String converted = gson.toJson(board);
-    assertEquals(converted, FrontEnd.squareToJson(test.makeMove(1)));
+    test.makeMove(1);
+    assertEquals(converted, FrontEnd.squareToJson(test.getBoard()));
   }
-
-
-
-
 }
