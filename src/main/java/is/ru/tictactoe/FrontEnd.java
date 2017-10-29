@@ -8,9 +8,6 @@ import com.google.gson.Gson;
 public class FrontEnd {
   private static Business bl;
 
-  public FrontEnd(){
-    bl = new Business();
-  }
 
 
   public static void main(String[] args) {
