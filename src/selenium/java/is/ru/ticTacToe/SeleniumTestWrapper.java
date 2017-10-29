@@ -17,33 +17,25 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
 public abstract class SeleniumTestWrapper {
-  //static ChromeDriver driver;
+
   static WebDriver driver;
   static DesiredCapabilities desiredCapabilities;
   static String baseUrl;
-  static String port;
 
   @BeforeClass
   public static void openBrowser() {
-    
+
     ChromeOptions chromeOptions = new ChromeOptions();
     DesiredCapabilities dc = DesiredCapabilities.chrome();
-    //chromeOptions.setBinary("usr/bin/chromium-browser");
+
     chromeOptions.addArguments("--headless");
 
     dc.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-    //driver = new RemoteWebDriver(dc);
     driver = new ChromeDriver(chromeOptions);
 
-
-    //driver = new ChromeDriver();
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-    //port = System.getenv("PORT");
-    /*if (port == null) {
-        port = "4567";
-    }*/
-    baseUrl = "https://mighty-brushlands-46890.herokuapp.com"; /*+ port*/
+    baseUrl = "https://mighty-brushlands-46890.herokuapp.com";
   }
 
   @AfterClass
