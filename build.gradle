@@ -53,7 +53,6 @@ test.useTestNG()
 task selenium(type: Test, dependsOn: installDist) {
   testClassesDir = sourceSets.selenium.output.classesDir
   classpath = sourceSets.selenium.runtimeClasspath
-
 }
 
 buildscript {
@@ -83,4 +82,4 @@ jacocoTestReport {
     }
 }
 
-build.finalizedBy(jacocoTestReport)
+build.finalizedBy(jacocoTestReport, selenium)
