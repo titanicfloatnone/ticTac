@@ -19,12 +19,15 @@ public class Business {
 		return moves;
 	}
 
-	public Square[] makeMove(int position) {
+	public void makeMove(int position) {
 		if(position < 0 || position > 8) {
 			throw new IllegalArgumentException("Illegal move!");
 		}
 		else if(!board[position].isFree()) {
 			throw new IllegalArgumentException("Position taken!");
+		}
+		if(hasWinner()) {
+			return;
 		}
 		if(xmove) {
 			board[position].setSymbol('X');
@@ -35,7 +38,6 @@ public class Business {
 			xmove = true;
 		}
 		moves++;
-		return board;
 	}
 
 	public void restartGame() {

@@ -23,8 +23,8 @@ public class FrontEnd {
 
         try {
             Integer number = map.get("number").integerValue();
-
-            return squareToJson(bl.makeMove(number));
+            bl.makeMove(number);
+            return squareToJson(bl.getBoard());
         }
         catch (Exception e){
             return "Error: " + e.getMessage();
