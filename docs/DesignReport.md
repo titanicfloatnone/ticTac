@@ -2,9 +2,10 @@
 
 ##Introduction
 Included in this report is the design framework for our implementation of the game Tic-Tac-Toe.
-##Classes
 
-![Class Diagram](https://github.com/titanicfloatnone/ticTac/blob/markdownFiles/docs/ClassDiagram.png)
+##Classes
+Class Diagram
+![Imgur](https://i.imgur.com/XOWkcyL.png)
 
 ##Programming languages
 Java was used to code all the business logic and entity classes as well as part of the front end. Additionally HTML and CSS were used for the look of the website and Javascript to communicate with Ajax which was used to detect clicks and forward info back to the Java part of the front end.
