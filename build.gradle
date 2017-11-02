@@ -57,7 +57,6 @@ dependencies {
     seleniumCompile 'org.seleniumhq.selenium:selenium-java:3.6.0'
 }
 
-test.useTestNG()
 
 task selenium(type: Test, dependsOn: installDist) {
   testClassesDir = sourceSets.selenium.output.classesDir
