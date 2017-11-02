@@ -18,6 +18,8 @@ body {
 .box {
   border: 1px solid black;
   height: 150px;
+  text-align: center;
+  font-size: 106px;
 }
 .restart {
   text-align: center;
